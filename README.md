@@ -1,24 +1,34 @@
-# README
+# Install
+- ``git clone https://github.com/jcortesg/t-click_au.git``
+- ``cd t-click_au``
+- ``bundle install``
+- ``rails s``
+-  ``cd font-end`` ***(REACT PROJECT)***
+- ``yarn && yarn install``
+- ``yarn start``
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Enpoints
 
-Things you may want to cover:
+- POST http://localhost:3000/vehicle_models
+  #### BODY
+  ``
+   {"vehicle_model": {
+  "name": "Golf",
+  "brand": "VW"
+}}
+  ``
+- POST http://localhost:3000/vehicles
+  #### BODY
+  ``
+  {
+    "vehicle": {
+        "brand": "VW",
+        "model": "Golf",
+        "year": "2020",
+        "price": 100000,
+        "mileage": 3000
+    }
+}
+  ``
+- GET http://localhost:3000/vehicles?model_name=Golf&mileage=0&price=100000&year=2019
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
