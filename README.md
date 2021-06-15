@@ -3,9 +3,13 @@
 - ``cd t-click_au``
 - ``bundle install``
 - ``rails s``
+- ``rake db:create && rake db:migrate && rake db:seed``
 -  ``cd font-end`` ***(REACT PROJECT)***
 - ``yarn && yarn install``
 - ``yarn start``
+
+# Test
+- ``rspec``
 
 # Enpoints
 

@@ -5,5 +5,5 @@ class VehicleBrand < ApplicationRecord
     presence: true,
     uniqueness: true
 
-  before_save { self.name.downcase!}
+  before_validation { self.name.downcase!}
 end

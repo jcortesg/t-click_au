@@ -30,6 +30,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rubocop-rails', require: false
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'database_cleaner'
 end
 
 group :development do

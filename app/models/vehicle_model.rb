@@ -13,7 +13,7 @@ class VehicleModel < ApplicationRecord
   private
 
   def set_brand
-    return nil if self.brand.nil?
+    return if self.brand.nil?
     self.brand.downcase!
     brand = VehicleBrand.find_or_create_by(name: self.brand)
     self.vehicle_brand_id = brand.id

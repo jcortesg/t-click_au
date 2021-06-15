@@ -14,12 +14,12 @@ RSpec.describe VehicleModel, type: :model do
     it 'when there is valid save record' do 
       vm = VehicleModel.create({brand: 'VW', name: 'Golf'})
       expect(vm).to be_valid
-      expect(VehicleModel.find_by(name: 'Golf')).to eq(vm)
+      expect(VehicleModel.find_by(name: 'golf')).to eq(vm)
     end
     
     it 'do not accept duplicated names' do 
-      vm = VehicleModel.create({brand: 'VW', name: 'Golf'})
-      vm_duplicate = VehicleModel.create({brand: 'VW', name: 'Golf'})
+      vm = VehicleModel.create({brand: 'VV', name: 'Golf'})
+      vm_duplicate = VehicleModel.create({brand: 'VV', name: 'Golf'})
       expect(vm).to be_valid
       expect(vm_duplicate.errors[:name].first).to eq 'has already been taken'
     end
@@ -40,14 +40,15 @@ RSpec.describe VehicleModel, type: :model do
       it 'should be find record' do
         VehicleBrand.create(name: 'VW')
         vm = VehicleModel.create({brand: 'VW', name: 'Golf'})
-        expect(VehicleBrand.find_by(name: 'VW')).to eq(vm.vehicle_brand)
+        expect(VehicleBrand.find_by(name: 'vw')).to eq(vm.vehicle_brand)
       end
     end
 
     context 'when vehicle_brand does not exist' do
       it 'should be find record' do
         vm = VehicleModel.create({brand: 'VW', name: 'Golf'})
-        expect(VehicleBrand.find_by(name: 'VW')).to eq(vm.vehicle_brand)
+        expect(vm).to be_valid
+        expect(VehicleBrand.find_by(name: 'vm')).to eq(vm.vehicle_brand)
       end
     end
   end
